@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div id="home-jumbotron" class="jumbotron text-center">
+  <h1 class="title">{{ .Site.Title }}</h1>
+</div>
+
+{{ range .Site.RegularPages.ByPublishDate.Reverse }}
+<p>
+    <h3><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p>{{ .Summary }}</p>
+</p>
+<hr>
+{{ end }}
+
+{{ end }}
